@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.flaskenv
+*.venv
+venv/
+env/
+ENV/
+flaskenv/
+FLASKENV/
+*.egg-info/
+*.egg
+.Python
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Flask / Django
+instance/
+*.sqlite3
+*.log
+
+# Environment variables / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Node/npm (if used for tooling like prettier/eslint)
+node_modules/
+
+# Compiled frontend assets (if built separately)
+dist/
+build/
+
+# Coverage and testing
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+*.pyc
+.cache/
+pytest_cache/
+nosetests.xml
+test-results.xml
+
+# Others
+*.swp
+*.bak
+*.tmp
+
+# IDEs
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}PokeBuy{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <h1 class="nav-title">PokeBuy</h1>
+        <ul class="nav-item-container">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/inventory">Inventory</a></li>
+          <li><a href="/add-card">Add Card</a></li>
+          <li><a href="/transactions">Transactions</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="footer-container">
+      <p>&copy; 2025 PokeyBuy. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

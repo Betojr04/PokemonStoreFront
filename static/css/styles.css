@@ -1,0 +1,49 @@
+/* NAVBAR STYLING DESKTOP  */
+header {
+    /* display: flex; */
+    /* flex-direction: row; */
+    border: solid red 1px;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    padding-left: .5rem;
+}
+
+.nav-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item-container li {
+    padding: .5rem;
+    list-style: none;
+}
+
+.nav-item-container li a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* NAVBAR STYLING MOBILE */
+
+
+
+/* FOOTER STYLING DESKTOP*/
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* FOOTER STYLING MOBILE */
