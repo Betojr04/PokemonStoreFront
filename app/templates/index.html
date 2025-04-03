@@ -1,6 +1,42 @@
-{% extends "base.html" %} {% block title %}Home - PokeBuy{% endblock %} {% block
-content %}
-<h2>Welcome to your PokeBuy Seller Dashboard!</h2>
-<h2>This is the seller dashboard page</h2>
-<button id="clickMe">Click Me</button>
+{% extends "base.html" %} {% block title %}Dashboard - PokeBuy{% endblock %} {%
+block content %}
+<main class="dashboard-main">
+  <section class="summary-section">
+    <h1>Seller Dashboard</h1>
+    <div class="cards-container">
+      <div class="total-card-container">
+        <h1 class="card-title">Total Cards:</h1>
+        <p class="card-summary">175</p>
+      </div>
+
+      <div class="total-profit-container">
+        <h1 class="profit-title">Total Profit:</h1>
+        <p class="profit-summary">$1,000.00</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="recent-section">
+    <h1>Recent Sales Table</h1>
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>Card Name</th>
+          <th>Quantity</th>
+          <th>Sales Price</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pikachu</td>
+          <td>10</td>
+          <td>$100.00</td>
+          <td>$50.00</td>
+        </tr>
+        <!-- Additional rows can be added here -->
+      </tbody>
+    </table>
+  </section>
+</main>
 {% endblock %}

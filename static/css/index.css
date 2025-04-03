@@ -1,0 +1,70 @@
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-card-container {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid red 1px;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.total-profit-container {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid red 1px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+
+/* RECENTS SUMMARY STYLING */
+
+.recent-section {
+    width: 100%;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+.sales-table th,
+.sales-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.sales-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sales-table {
+        font-size: 14px;
+    }
+}

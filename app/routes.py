@@ -3,6 +3,7 @@ from flask import Blueprint, render_template
 main = Blueprint("main", __name__)
 
 
+# MAIN VIEW ROUTES
 @main.route("/")
 def index():
     return render_template("index.html", page_css="index.css")
@@ -21,3 +22,9 @@ def add_card():
 @main.route("/transactions")
 def transactions():
     return render_template("transactions.html", page_css="transactions.css")
+
+
+# RECENT SALES TABLE UPDATE ROUTING
+# @main.route("/gettransactions", methods=["GET"])
+# def get_transactions():
+#     pass
