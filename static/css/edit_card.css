@@ -1,0 +1,65 @@
+/* edit_card.css */
+.edit-card-container {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-card-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.edit-card-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-card-container form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.edit-card-container form input[type="text"],
+.edit-card-container form input[type="number"],
+.edit-card-container form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+.edit-card-container form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.edit_card-container form button:hover,
+.edit-card-container form button:hover {
+    background-color: #0056b3;
+}
+
+.edit-card-container a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+.edit-card-container a:hover {
+    text-decoration: underline;
+}

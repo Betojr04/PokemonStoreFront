@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block title %}Edit Card - PokeBuy{% endblock %} {%
+block content %}
+<div class="edit-card-container">
+  <h1>Edit Card</h1>
+  <!-- The form posts to the same URL that includes the card ID -->
+  <form
+    action="{{ url_for('main.edit_card', card_id=card.id) }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="card_name">Card Name:</label>
+    <input
+      type="text"
+      id="card_name"
+      name="card_name"
+      value="{{ card.card_name }}"
+      required
+    />
+
+    <label for="edition">Edition:</label>
+    <input
+      type="text"
+      id="edition"
+      name="edition"
+      value="{{ card.edition }}"
+      required
+    />
+
+    <label for="condition">Condition:</label>
+    <input
+      type="text"
+      id="condition"
+      name="condition"
+      value="{{ card.condition }}"
+      required
+    />
+
+    <label for="quantity">Quantity:</label>
+    <input
+      type="number"
+      id="quantity"
+      name="quantity"
+      value="{{ card.quantity }}"
+      required
+    />
+
+    <label for="buy_price">Buy Price:</label>
+    <input
+      type="text"
+      id="buy_price"
+      name="buy_price"
+      value="{{ card.buy_price }}"
+      required
+    />
+
+    <label for="card_image"
+      >Card Image (upload new image to replace current one):</label
+    >
+    <input type="file" id="card_image" name="card_image" accept="image/*" />
+
+    <button type="submit">Update Card</button>
+  </form>
+  <a href="{{ url_for('main.inventory') }}">Cancel</a>
+</div>
+{% endblock %}

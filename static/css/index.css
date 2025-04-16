@@ -42,7 +42,11 @@
 /* RECENTS SUMMARY STYLING */
 
 .recent-section {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .sales-table {
@@ -64,6 +68,10 @@
 }
 
 @media (max-width: 768px) {
+    .recent-section {
+        width: 80%;
+    }
+
     .sales-table {
         font-size: 14px;
     }

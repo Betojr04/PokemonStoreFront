@@ -1,0 +1,67 @@
+/* sell_card.css */
+.sell-card-container {
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sell-card-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.sell-card-container p {
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.sell-card-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sell-card-container form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.sell-card-container form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+.sell-card-container form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.sell-card-container form button:hover {
+    background-color: #218838;
+}
+
+.sell-card-container a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+.sell-card-container a:hover {
+    text-decoration: underline;
+}

@@ -1,4 +1,141 @@
-{% extends "base.html" %} {% block title %}Home - PokeBuy{% endblock %} {% block
-content %}
-<h2>Inventory</h2>
+{% extends "base.html" %} {% block title %}Inventory - PokeBuy{% endblock %} {%
+block content %}
+<div class="inventory-container">
+  <!-- Search + Filter Bar -->
+  <div class="inventory-search">
+    <input type="text" id="search" placeholder="Search cards..." />
+    <select id="edition-filter">
+      <option value="">All Editions</option>
+      <option value="Base Set">Base Set</option>
+      <option value="EX">EX</option>
+      <!-- Additional options can be added here -->
+    </select>
+    <button id="search-btn">Search</button>
+    <!-- Add New Card Button -->
+    <button id="add-card-btn" class="btn-add">Add New Card</button>
+  </div>
+
+  <!-- Card Table -->
+  <div class="inventory-table-wrapper">
+    <table class="cards-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Card Name</th>
+          <th>Edition</th>
+          <th>Condition</th>
+          <th>Qty</th>
+          <th>Buy $</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for card in cards %}
+        <tr>
+          <td>{{ card.id }}</td>
+          <td>
+            {% if card.image_path %}
+            <img
+              src="{{ url_for('static', filename=card.image_path) }}"
+              alt="{{ card.card_name }}"
+              class="card-img"
+            />
+            {% else %}
+            <img
+              src="{{ url_for('static', filename='placeholder.jpg') }}"
+              alt="No image available"
+              class="card-img"
+            />
+            {% endif %}
+          </td>
+          <td>{{ card.card_name }}</td>
+          <td>{{ card.edition }}</td>
+          <td>{{ card.condition }}</td>
+          <td>{{ card.quantity }}</td>
+          <td>${{ card.buy_price }}</td>
+          <td>
+            <a
+              href="{{ url_for('main.edit_card', card_id=card.id) }}"
+              class="btn-edit"
+              >Edit</a
+            >
+            <a
+              href="{{ url_for('main.sell_card', card_id=card.id) }}"
+              class="btn-sell"
+              >Sell</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Add New Card Modal -->
+<div id="add-card-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add New Card</h2>
+    <form
+      id="add-card-form"
+      action="/inventory/add"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label for="card-name">Card Name:</label>
+      <input type="text" id="card-name" name="card_name" required />
+
+      <label for="edition">Edition:</label>
+      <input type="text" id="edition" name="edition" required />
+
+      <label for="condition">Condition:</label>
+      <input
+        type="text"
+        id="condition"
+        name="condition"
+        placeholder="e.g. NM, LP"
+        required
+      />
+
+      <label for="qty">Quantity:</label>
+      <input type="number" id="qty" name="quantity" min="1" required />
+
+      <label for="buy-price">Buy Price:</label>
+      <input
+        type="text"
+        id="buy-price"
+        name="buy_price"
+        placeholder="$0.00"
+        required
+      />
+
+      <label for="card-image">Card Image:</label>
+      <input type="file" id="card-image" name="card_image" accept="image/*" />
+
+      <button type="submit" class="btn-submit">Add Card</button>
+    </form>
+  </div>
+</div>
+
+<!-- JavaScript to handle modal functionality -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("add-card-modal");
+    const addCardBtn = document.getElementById("add-card-btn");
+    const closeModal = document.querySelector(".modal .close");
+    addCardBtn.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+    window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
 {% endblock %}

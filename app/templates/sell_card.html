@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Sell Card - PokeBuy{% endblock %} {%
+block content %}
+<div class="sell-card-container">
+  <h1>Sell Card</h1>
+  <p>Card: <strong>{{ card.card_name }}</strong></p>
+  <p>Available Quantity: <strong>{{ card.quantity }}</strong></p>
+
+  <!-- Simple confirmation form; if you want to capture more data, add additional fields -->
+  <form action="{{ url_for('main.sell_card', card_id=card.id) }}" method="post">
+    <label for="sell_quantity">Quantity to Sell:</label>
+    <input
+      type="number"
+      id="sell_quantity"
+      name="sell_quantity"
+      value="1"
+      min="1"
+      max="{{ card.quantity }}"
+      required
+    />
+
+    <label for="sell_price">Sale Price per Card:</label>
+    <input
+      type="text"
+      id="sell_price"
+      name="sell_price"
+      placeholder="$0.00"
+      required
+    />
+
+    <button type="submit">Confirm Sale</button>
+  </form>
+
+  <a href="{{ url_for('main.inventory') }}">Cancel</a>
+</div>
+{% endblock %}
