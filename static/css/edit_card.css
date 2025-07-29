@@ -1,65 +1,110 @@
-/* edit_card.css */
+/* ===================================
+   Edit Card Container
+   =================================== */
 .edit-card-container {
-    margin: 20px auto;
+    margin: 40px auto;
     max-width: 600px;
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Heading */
 .edit-card-container h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3B4CCA;
+    /* Pokémon Blue */
 }
 
+/* ===================================
+   Form Styling
+   =================================== */
 .edit-card-container form {
     display: flex;
     flex-direction: column;
 }
 
 .edit-card-container form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
 }
 
 .edit-card-container form input[type="text"],
 .edit-card-container form input[type="number"],
 .edit-card-container form input[type="file"] {
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px;
+    margin-bottom: 18px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
+.edit-card-container form input:focus {
+    border-color: #3B4CCA;
+    /* Pokémon Blue highlight */
+    outline: none;
+}
+
+/* ===================================
+   Submit Button
+   =================================== */
 .edit-card-container form button {
-    padding: 10px;
-    background-color: #007bff;
+    padding: 14px;
+    background-color: #E3350D;
+    /* Pokémon Red */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.edit_card-container form button:hover,
 .edit-card-container form button:hover {
-    background-color: #0056b3;
+    background-color: #b92a0a;
+    transform: scale(1.03);
 }
 
+/* ===================================
+   Cancel Link
+   =================================== */
 .edit-card-container a {
     display: block;
     text-align: center;
-    margin-top: 10px;
-    color: #007bff;
+    margin-top: 15px;
+    color: #3B4CCA;
+    font-weight: 600;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
 }
 
 .edit-card-container a:hover {
+    color: #E3350D;
     text-decoration: underline;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 600px) {
+    .edit-card-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .edit-card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .edit-card-container form button {
+        font-size: 0.95rem;
+    }
 }

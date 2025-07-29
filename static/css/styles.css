@@ -8,97 +8,72 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f9f9f9;
 }
 
 /* ===================================
    Header & Navigation Styling
    =================================== */
 header {
-    border: 1px solid red;
-    /* Visual aid for header border */
-    padding: 10px;
+    background-color: #E3350D;
+    /* Pokémon Red */
+    padding: 10px 20px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar container: using flex layout for alignment */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Site Title styling */
+/* Logo / Title */
 .nav-title {
-    padding-left: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    /* White for visibility */
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-/* Navigation items styling (unordered list) */
+.nav-title:hover {
+    color: #FFCB05;
+    /* Pokémon Yellow for hover contrast */
+}
+
+/* Navigation Links */
 .nav-item-container {
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    gap: 1.5rem;
 }
 
-/* Each navigation item (list element) */
-.nav-item-container li {
-    padding: 0.5rem;
-}
-
-/* Link styling for navigation items */
 .nav-item-container li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
-/* Hamburger menu icon styling (default: hidden) */
+.nav-item-container li a:hover {
+    color: #FFCB05;
+    /* Pokémon Yellow for hover contrast */
+}
+
+/* Hamburger Icon (Mobile) */
 .hamburger {
     display: none;
     font-size: 2rem;
     cursor: pointer;
-}
-
-/* ===================================
-   Mobile Specific Styling
-   =================================== */
-@media (max-width: 768px) {
-
-    /* Reveal the hamburger icon on mobile screens */
-    .hamburger {
-        display: block;
-        padding-right: 1rem;
-    }
-
-    /* Hide the navigation list on mobile by default */
-    .nav-item-container {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        /* Adjust depending on your header height */
-        right: 0;
-        width: 100%;
-        background-color: #fff;
-        border-top: 1px solid #ccc;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    /* When active (toggled via JavaScript), display the menu */
-    .nav-item-container.active {
-        display: flex;
-    }
-
-    /* Mobile nav items styling */
-    .nav-item-container li {
-        text-align: center;
-        padding: 1rem 0;
-        border-bottom: 1px solid #eee;
-    }
+    color: #fff;
 }
 
 /* ===================================
@@ -106,12 +81,44 @@ header {
    =================================== */
 .footer-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    font-size: 0.875rem;
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-size: 0.9rem;
     color: #777;
+    margin-top: 30px;
+}
+
+/* ===================================
+   Mobile Responsiveness
+   =================================== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-item-container {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #E3350D;
+        padding: 15px 0;
+    }
+
+    .nav-item-container.active {
+        display: flex;
+    }
+
+    .nav-item-container li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-item-container li a {
+        font-size: 1.2rem;
+    }
 }

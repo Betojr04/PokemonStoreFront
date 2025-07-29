@@ -1,78 +1,128 @@
+/* ===================================
+   Dashboard Main Layout
+   =================================== */
 .dashboard-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
+.dashboard-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #3B4CCA;
+    /* Pokémon Blue */
+}
 
+/* ===================================
+   Summary Cards
+   =================================== */
 .summary-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 2rem;
 }
 
 .cards-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.total-card-container {
-    border-radius: 5px;
-    padding: 10px;
-    border: solid red 1px;
-    margin-right: 5rem;
-    display: flex;
-    flex-direction: column;
-
+.summary-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.total-profit-container {
-    border-radius: 5px;
-    padding: 10px;
-    border: solid red 1px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5rem;
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
+.summary-card h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
 
-/* RECENTS SUMMARY STYLING */
+.summary-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E3350D;
+}
 
+/* ===================================
+   Recent Sales Table
+   =================================== */
 .recent-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+    width: 100%;
+    max-width: 1100px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.recent-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #3B4CCA;
+}
+
+.table-wrapper {
+    overflow-x: auto;
 }
 
 .sales-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1em;
+    font-size: 0.95rem;
 }
 
 .sales-table th,
 .sales-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
 }
 
 .sales-table th {
-    background-color: #f2f2f2;
-    text-align: center;
+    background-color: #3B4CCA;
+    color: #fff;
+    font-weight: 600;
 }
 
+.sales-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ===================================
+   Mobile Adjustments
+   =================================== */
 @media (max-width: 768px) {
-    .recent-section {
-        width: 80%;
+    .dashboard-main {
+        padding: 1rem;
     }
 
-    .sales-table {
-        font-size: 14px;
+    .summary-card {
+        padding: 1rem;
+    }
+
+    .summary-value {
+        font-size: 1.5rem;
+    }
+
+    .sales-table th,
+    .sales-table td {
+        font-size: 0.85rem;
+        padding: 0.6rem;
     }
 }

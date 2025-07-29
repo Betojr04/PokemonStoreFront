@@ -1,67 +1,123 @@
-/* sell_card.css */
+/* ===================================
+   Sell Card Container
+   =================================== */
 .sell-card-container {
-    margin: 20px auto;
-    max-width: 400px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Heading */
 .sell-card-container h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #E3350D;
+    /* Pokémon Red */
 }
 
+/* Card Info */
 .sell-card-container p {
     margin: 10px 0;
-    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
 }
 
+.sell-card-container strong {
+    color: #3B4CCA;
+    /* Pokémon Blue for emphasis */
+}
+
+/* ===================================
+   Form Styling
+   =================================== */
 .sell-card-container form {
     display: flex;
     flex-direction: column;
+    margin-top: 15px;
 }
 
 .sell-card-container form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
 }
 
-.sell-card-container form input[type="number"] {
-    padding: 10px;
-    margin-bottom: 15px;
+.sell-card-container form input[type="number"],
+.sell-card-container form input[type="text"] {
+    padding: 12px;
+    margin-bottom: 18px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
+.sell-card-container form input:focus {
+    border-color: #3B4CCA;
+    outline: none;
+}
+
+/* ===================================
+   Confirm Sale Button
+   =================================== */
 .sell-card-container form button {
-    padding: 10px;
-    background-color: #28a745;
+    padding: 14px;
+    background-color: #3B4CCA;
+    /* Pokémon Blue */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .sell-card-container form button:hover {
-    background-color: #218838;
+    background-color: #2c369b;
+    transform: scale(1.03);
 }
 
+/* ===================================
+   Cancel Link
+   =================================== */
 .sell-card-container a {
     display: block;
     text-align: center;
-    margin-top: 10px;
-    color: #007bff;
+    margin-top: 15px;
+    color: #E3350D;
+    /* Pokémon Red */
+    font-weight: 600;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
 }
 
 .sell-card-container a:hover {
+    color: #3B4CCA;
     text-decoration: underline;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 600px) {
+    .sell-card-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .sell-card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .sell-card-container form button {
+        font-size: 0.95rem;
+    }
 }
